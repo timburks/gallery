@@ -10,6 +10,7 @@ import 'package:gallery/layout/image_placeholder.dart';
 import 'package:gallery/layout/text_scale.dart';
 import 'package:gallery/l10n/gallery_localizations.dart';
 import 'package:gallery/studies/fortnightly/shared.dart';
+import 'package:gallery/studies/fortnightly/article_previews.dart';
 
 const _fortnightlyTitle = 'Fortnightly';
 
@@ -152,9 +153,7 @@ class _FortnightlyHomeDesktop extends StatelessWidget {
                   spacer,
                   Flexible(
                     flex: 2,
-                    child: ListView(
-                      children: buildArticlePreviewItems(context),
-                    ),
+                    child: ArticlePreviewItemsWidget(),
                   ),
                   spacer,
                   Flexible(
