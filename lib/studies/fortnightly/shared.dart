@@ -18,13 +18,15 @@ class ArticleData {
       this.imageAspectRatio,
       this.category,
       this.title,
-      this.snippet});
+      this.snippet,
+      this.readingTime});
 
   final String imageUrl;
   final double imageAspectRatio;
   final String category;
   final String title;
   final String snippet;
+  final int readingTime;
 }
 
 class HorizontalArticlePreview extends StatelessWidget {
