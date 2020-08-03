@@ -76,16 +76,7 @@ class _FortnightlyHomeMobile extends StatelessWidget {
         ],
       ),
       body: SafeArea(
-        child: ListView(
-          children: [
-            HashtagBar(),
-            for (final item in buildArticlePreviewItems(context))
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: item,
-              ),
-          ],
-        ),
+        child: ArticlePreviewItemsWidget(),
       ),
     );
   }

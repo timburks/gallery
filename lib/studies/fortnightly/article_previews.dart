@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
+import 'package:gallery/layout/adaptive.dart';
 import 'package:gallery/data/gallery_options.dart';
 import 'package:gallery/l10n/gallery_localizations.dart';
 import 'package:gallery/layout/image_placeholder.dart';
@@ -31,14 +32,23 @@ class _ArticlePreviewItemsWidgetState extends State<ArticlePreviewItemsWidget> {
           _loadArticles();
         });
       });
+    }
+    if (isDisplayDesktop(context)) {
       return ListView(
         children: _buildArticlePreviewItems(context),
       );
+    } else {
+      return ListView(
+        children: [
+          HashtagBar(),
+          for (final item in _buildArticlePreviewItems(context))
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: item,
+            ),
+        ],
+      );
     }
-
-    return ListView(
-      children: _buildArticlePreviewItems(context),
-    );
   }
 
   void _loadArticles() {
